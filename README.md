@@ -1,6 +1,9 @@
 <div align="left">
 
-# "HOUSE PRICES: ADVANCED REGRESSION TECHNIQUES" – UN ENFOQUE HÍBRIDO CON APRENDIZAJE SUPERVISADO Y NO SUPERVISADO
+# "HOUSE PRICES: ADVANCED REGRESSION TECHNIQUES" 
+<br>
+
+#  Un Enfoque Híbrido con Aprendizaje Supervisado y No Supervisado
 
 </div>
 
