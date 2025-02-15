@@ -153,7 +153,7 @@ Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo 
 
 4. **TotalBsmtSF**: Esta variable representa el área total del sótano, y es la suma de todas las áreas, tanto las acabadas (**BsmtFinSF1 + BsmtFinSF2**) como las no acabadas (**BsmtUnfSF**).
 
-Estas seis variables deberían poder resumirse en una sola; en primer lugar, como hasta ahora le daremos un valor de 0 a los NA, luego le asignaremos valores ordinales a BsmtFintype 1 y 2, luego se pondera el valor de las áreas correspondientes, con una fórmula que será el valor normalizado de la correspondiente área con el valor de BsmtFintype para luego sumar todas las áreas.
+**Estas seis variables deberían poder resumirse en una sola**; en primer lugar, como hasta ahora le daremos un valor de 0 a los NA, luego le asignaremos valores ordinales a BsmtFintype 1 y 2, luego se pondera el valor de las áreas correspondientes, con una fórmula que será el valor normalizado de la correspondiente área con el valor de BsmtFintype para luego sumar todas las áreas.
 
 
 
