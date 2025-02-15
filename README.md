@@ -41,6 +41,9 @@ Este proyecto utiliza el dataset **"House Prices: Advanced Regression Techniques
 Este **enfoque híbrido** permite no solo **mejorar la precisión** de las predicciones, sino también **extraer insights clave** sobre los factores que influyen en el precio de las viviendas en diferentes segmentos del mercado.  
 
 ## Análisis exploratorio de los datos
+
+<br>
+
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/02.png">
@@ -53,6 +56,8 @@ Se observa un alto porcentaje de datos faltantes en algunas columnas. Dado que e
 
 Sin embargo, no se descartarán estas variables de inmediato, ya que aún podrían ofrecer información útil. Por ejemplo, los valores nulos en la columna **`Fence`** podrían interpretarse como la **ausencia de cercas** y ser sustituidos por un **0**.  
 
+<br>
+
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/03.png">
@@ -62,6 +67,39 @@ Sin embargo, no se descartarán estas variables de inmediato, ya que aún podrí
 Lo primero que llama la atención es que algunas columnas **numéricas** podrían ser, en realidad, **categóricas**. Tras revisar la descripción de los datos proporcionada, podemos concluir que **MSSubClass** es, de hecho, una columna categórica. También se observa que algunas variables presentan un **sesgo a la derecha** en su distribución.  
 
 Algunas variables categóricas tienen una **única categoría**, lo que las hace completamente inútiles, por lo que deben ser **eliminadas**. Además, hay otras variables en las que una **categoría domina significativamente** sobre las demás, lo que las hace susceptibles de algún tipo de transformación para reducir la dimensionalidad. Por último, un tercer grupo de variables presenta **demasiadas categorías**, que en el futuro muy posiblemente deberán ser reducidas para controlar la dimensionalidad del modelo.  
+
+Parece que muchas variables tienen **valores atípicos**. Sin embargo, dada la naturaleza del dataset, no se puede saber a priori si son valores **legítimamente altos** o si se deben a **errores en la recolección de datos**.  
+
+Este hecho, junto con el uso de **modelos robustos** que manejan bien los outliers para la predicción, descarta cualquier tipo de **eliminación generalizada** de estos valores. En su lugar, se tratará **cada caso de forma individual**.  
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/04.png">
+  
+</div>
+
+Parece que muchas variables tienen **valores atípicos**. Sin embargo, dada la naturaleza del dataset, no se puede saber a priori si son valores **legítimamente altos** o si se deben a **errores en la recolección de datos**.  
+
+Este hecho, junto con el uso de **modelos robustos** que manejan bien los outliers para la predicción, descarta cualquier tipo de **eliminación generalizada** de estos valores. En su lugar, se tratará **cada caso de forma individual**.  
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/05.png">
+  
+</div>
+
+Se observan **correlaciones** tanto con **SalePrice** como entre otras variables. Por ejemplo, las correlaciones de **YearBuilt** con otras variables sugieren distintas preferencias en el diseño de las casas a lo largo de los años.  
+
+Analizando concretamente las **correlaciones de las variables numéricas** con la variable objetivo, vuelven a aparecer **fuertes correlaciones**, mientras que en otras variables no tanto. Sin embargo, estas últimas pueden ser **importantes para el modelo** al establecer **relaciones no lineales**.  
+
+
+
+
+
 
 
 
