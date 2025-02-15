@@ -19,12 +19,6 @@
 **Lenguajes:**
 ![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
 
-**Librerías:**
-## Tecnologías usadas
-
-**Lenguajes:**
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white)
-
 **Librerías:**  
 ![NumPy](https://img.shields.io/badge/-NumPy-013243?style=flat&logo=numpy&logoColor=white) 
 ![Pandas](https://img.shields.io/badge/-Pandas-150458?style=flat&logo=pandas&logoColor=white) 
@@ -45,6 +39,21 @@ Este proyecto utiliza el dataset **"House Prices: Advanced Regression Techniques
 - **Reentrenamiento supervisado** dentro de cada cluster, mejorando el rendimiento del modelo y obteniendo información valiosa sobre la importancia de las características en cada grupo.  
 
 Este **enfoque híbrido** permite no solo **mejorar la precisión** de las predicciones, sino también **extraer insights clave** sobre los factores que influyen en el precio de las viviendas en diferentes segmentos del mercado.  
+
+## Análisis exploratorio de los datos
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/01.png">
+  
+</div>
+El dataset está compuesto por **80 variables** (incluida la variable objetivo) de naturaleza tanto **categórica como numérica**.  
+
+Se observa un alto porcentaje de datos faltantes en algunas columnas. Dado que el dataset tiene 1460 filas, ciertas variables presentan hasta un **90 % de valores NaN**.  
+
+Sin embargo, no se descartarán estas variables de inmediato, ya que aún podrían ofrecer información útil. Por ejemplo, los valores nulos en la columna **`Fence`** podrían interpretarse como la **ausencia de cercas** y ser sustituidos por un **0**.  
+
+
+
 
 
 
