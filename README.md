@@ -53,6 +53,15 @@ Se observa un alto porcentaje de datos faltantes en algunas columnas. Dado que e
 
 Sin embargo, no se descartarán estas variables de inmediato, ya que aún podrían ofrecer información útil. Por ejemplo, los valores nulos en la columna **`Fence`** podrían interpretarse como la **ausencia de cercas** y ser sustituidos por un **0**.  
 
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/03.png">
+  
+</div>
+
+Lo primero que llama la atención es que algunas columnas **numéricas** podrían ser, en realidad, **categóricas**. Tras revisar la descripción de los datos proporcionada, podemos concluir que **MSSubClass** es, de hecho, una columna categórica. También se observa que algunas variables presentan un **sesgo a la derecha** en su distribución.  
+
+Algunas variables categóricas tienen una **única categoría**, lo que las hace completamente inútiles, por lo que deben ser **eliminadas**. Además, hay otras variables en las que una **categoría domina significativamente** sobre las demás, lo que las hace susceptibles de algún tipo de transformación para reducir la dimensionalidad. Por último, un tercer grupo de variables presenta **demasiadas categorías**, que en el futuro muy posiblemente deberán ser reducidas para controlar la dimensionalidad del modelo.  
 
 
 
