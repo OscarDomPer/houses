@@ -40,6 +40,8 @@ Este proyecto utiliza el dataset **"House Prices: Advanced Regression Techniques
 
 Este **enfoque híbrido** permite no solo **mejorar la precisión** de las predicciones, sino también **extraer insights clave** sobre los factores que influyen en el precio de las viviendas en diferentes segmentos del mercado.  
 
+<br>
+
 ## Análisis exploratorio de los datos
 
 <br>
@@ -95,6 +97,19 @@ Este hecho, junto con el uso de **modelos robustos** que manejan bien los outlie
 Se observan **correlaciones** tanto con **SalePrice** como entre otras variables. Por ejemplo, las correlaciones de **YearBuilt** con otras variables sugieren distintas preferencias en el diseño de las casas a lo largo de los años.  
 
 Analizando concretamente las **correlaciones de las variables numéricas** con la variable objetivo, vuelven a aparecer **fuertes correlaciones**, mientras que en otras variables no tanto. Sin embargo, estas últimas pueden ser **importantes para el modelo** al establecer **relaciones no lineales**.  
+
+<br>
+
+## Tratamiento de los datos
+A continuación se detallará el tratamiento de los datos de algunas de las variables a modo de ejemplo. Se puede consultar el tratamiento para cada variable en el notebook: [Tratamiento de Variables - Notebook](https://github.com/OscarDomPer/houses/blob/main/02_NTT_trat_train.ipynb)
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/06.png">
+  
+</div>
 
 
 
