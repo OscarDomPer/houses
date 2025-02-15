@@ -145,20 +145,15 @@ Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo 
   
 </div>
 
-**BsmtFinType1** describe el tipo de acabado principal en el sótano (**GLQ, ALQ, BLQ, Rec, LwQ, Unf, NA**). **BsmtFinSF1** representa los **pies cuadrados acabados** correspondientes al tipo principal de acabado del sótano descrito por **BsmtFinType1**. Es decir, **BsmtFinType1** indica la **calidad del acabado** en una parte del sótano, y **BsmtFinSF1** cuantifica cuántos pies cuadrados corresponden a ese acabado.
+1. **BsmtFinType1 y BsmtFinSF1**: BsmtFinType1 describe el tipo de acabado principal en el sótano (**GLQ, ALQ, BLQ, Rec, LwQ, Unf, NA**). BsmtFinSF1 representa los pies cuadrados acabados correspondientes al tipo principal de acabado del sótano descrito por BsmtFinType1. Es decir, BsmtFinType1 indica la calidad del acabado en una parte del sótano, y BsmtFinSF1 cuantifica cuántos pies cuadrados corresponden a ese acabado.
 
-2. **BsmtFinType2 y BsmtFinSF2**:  
-**BsmtFinType2** describe el **segundo tipo de acabado** en el sótano (si hay más de un tipo de acabado). **BsmtFinSF2** indica los **pies cuadrados acabados** correspondientes a ese segundo tipo de acabado. Si un sótano tiene áreas con diferentes tipos de acabado, **BsmtFinType2** y **BsmtFinSF2** complementan a **BsmtFinType1** y **BsmtFinSF1**. Si no hay dos tipos de acabado, ambos pueden ser **NA** o **0**.
+2. **BsmtFinType2 y BsmtFinSF2**: BsmtFinType2 describe el segundo tipo de acabado en el sótano (si hay más de un tipo de acabado). BsmtFinSF2 indica los pies cuadrados acabados correspondientes a ese segundo tipo de acabado. Si un sótano tiene áreas con diferentes tipos de acabado, BsmtFinType2 y BsmtFinSF2 complementan a BsmtFinType1 y BsmtFinSF1. Si no hay dos tipos de acabado, ambos pueden ser NA o 0.
 
-3. **BsmtUnfSF**:  
-Representa los **pies cuadrados no acabados** del sótano. Es decir, esta variable indica qué parte del sótano no tiene ningún tipo de acabado.
+3. **BsmtUnfSF**: Representa los pies cuadrados no acabados del sótano. Es decir, esta variable indica qué parte del sótano no tiene ningún tipo de acabado.
 
-4. **TotalBsmtSF**:  
-Esta variable representa el **área total** del sótano, y es la **suma de todas las áreas**, tanto las acabadas (**BsmtFinSF1 + BsmtFinSF2**) como las no acabadas (**BsmtUnfSF**).
+4. **TotalBsmtSF**: Esta variable representa el área total del sótano, y es la suma de todas las áreas, tanto las acabadas (**BsmtFinSF1 + BsmtFinSF2**) como las no acabadas (**BsmtUnfSF**).
 
-### Resumen de tratamiento:  
-Estas seis variables deberían poder resumirse en una sola. En primer lugar, como hasta ahora se le dará un valor de **0** a los **NA**, luego se asignarán **valores ordinales** a **BsmtFinType1** y **BsmtFinType2**. Posteriormente, se ponderará el valor de las áreas correspondientes, con una fórmula que será el **valor normalizado** de la correspondiente área con el valor de **BsmtFinType** para luego **sumar todas las áreas**.
-
+Estas seis variables deberían poder resumirse en una sola; en primer lugar, como hasta ahora le daremos un valor de 0 a los NA, luego le asignaremos valores ordinales a BsmtFintype 1 y 2, luego se pondera el valor de las áreas correspondientes, con una fórmula que será el valor normalizado de la correspondiente área con el valor de BsmtFintype para luego sumar todas las áreas.
 
 
 
