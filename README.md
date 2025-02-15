@@ -43,9 +43,10 @@ Este **enfoque híbrido** permite no solo **mejorar la precisión** de las predi
 ## Análisis exploratorio de los datos
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/01.png">
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/02.png">
   
 </div>
+
 El dataset está compuesto por **80 variables** (incluida la variable objetivo) de naturaleza tanto **categórica como numérica**.  
 
 Se observa un alto porcentaje de datos faltantes en algunas columnas. Dado que el dataset tiene 1460 filas, ciertas variables presentan hasta un **90 % de valores NaN**.  
