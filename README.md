@@ -105,13 +105,15 @@ A continuación se detallará el tratamiento de los datos de algunas de las vari
 
 <br>
 
+### LotFrontage: 
+
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/06.png">
   
 </div>
 
-**LotFrontage**: Esta variable representa la medida del frente del lote que da a la calle. Es un buen ejemplo porque ilustra la política seguida tanto para los **outliers** como para los **NaN**.
+Esta variable representa la medida del frente del lote que da a la calle. Es un buen ejemplo porque ilustra la política seguida tanto para los **outliers** como para los **NaN**.
 
 ### Outliers:  
 El máximo de **LotFrontage** son dos propiedades de **313 pies** (aproximadamente 90 metros), lo que parece inverosímil para una propiedad residencial. Además, de acuerdo con sus correspondientes valores de **LotArea**, la propiedad tendría una forma extremadamente alargada, por lo que se asume que es un error de recolección de datos y se elimina. Este es uno de los pocos casos en los que se elimina el **outlier**. Otros casos, como una piscina de un área considerablemente más grande que una olímpica, se mantienen, ya que, si bien son atípicos, entran dentro de lo plausible. Se confía en la capacidad de los modelos más robustos para integrarlos en la predicción.
@@ -121,17 +123,21 @@ Hay **259 valores nulos**. Teniendo en cuenta que en el dataset no hay valores m
 
 <br>
 
+### Neighborhood: 
+
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/07.png">
   
 </div>
 
-**Neighborhood**: Es una variable a priori muy interesante, sin embargo, tiene demasiadas **categorías**. Al ser imposible codificarlas de forma ordinal, un **onehot encoding** aumentaría demasiado la dimensionalidad. La solución es **reagrupar los barrios** en tres categorías según su **precio medio**.
+Es una variable a priori muy interesante, sin embargo, tiene demasiadas **categorías**. Al ser imposible codificarlas de forma ordinal, un **onehot encoding** aumentaría demasiado la dimensionalidad. La solución es **reagrupar los barrios** en tres categorías según su **precio medio**.
 
 Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo que contribuye al objetivo de **reducir la dimensionalidad**.
 
 <br>
+
+### BsmtFinType1 y BsmtFinSF1:
 
 <div align="center">
 
@@ -139,7 +145,6 @@ Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo 
   
 </div>
 
-1. **BsmtFinType1 y BsmtFinSF1**:  
 **BsmtFinType1** describe el tipo de acabado principal en el sótano (**GLQ, ALQ, BLQ, Rec, LwQ, Unf, NA**). **BsmtFinSF1** representa los **pies cuadrados acabados** correspondientes al tipo principal de acabado del sótano descrito por **BsmtFinType1**. Es decir, **BsmtFinType1** indica la **calidad del acabado** en una parte del sótano, y **BsmtFinSF1** cuantifica cuántos pies cuadrados corresponden a ese acabado.
 
 2. **BsmtFinType2 y BsmtFinSF2**:  
