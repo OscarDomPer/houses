@@ -203,12 +203,51 @@ El objetivo es doble: por un lado, **mejorar las predicciones** encontrando patr
   
 </div>
 
+<br>
 
+<div align="center">
 
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/14.png">
+  
+</div>
 
+Dada la **gran dimensionalidad** del modelo, se valora la **inercia** de cada número de **clusters** en el **conjunto completo** de los datos y luego en **subconjuntos** con las **50, 30 y 10 variables más importantes** para el modelo **XGBoost**. En todos los casos, el número de **K** parece ser **2**, aunque no es una decisión clara.  
 
+Se vuelven a usar los **4 conjuntos** para obtener los **clusters** usando **KMeans=2**. Como era de esperar, al usar **todas las variables**, la **clusterización** no es clara, pero con las **50 mejores** ya se observan **dos clusters diferenciados**.  
 
+<br>
 
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/15.png">
+  
+</div>
+
+Se selecciona **K=2** en las **50 mejores características**, pues con esta combinación obtenemos **dos clusters plenamente diferenciados** y no perdemos demasiadas variables.  
+
+Como se observa en estas gráficas, los **clusters** se agrupan claramente en función del **valor de las viviendas**. Esto se refleja tanto en la variable **SalePrice** (que no fue utilizada para la agrupación) como en otras variables relacionadas con **calidad y superficie**, que presentan valores más altos en el **clúster 1**.  
+
+Por otro lado, la variable **Age**, que indica la **antigüedad de la vivienda**, es, como era de esperar, mayor en el **clúster 0**.  
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/16.png">
+  
+</div>
+
+Los **clusters** tienen el mismo comportamiento respecto a las **variables clave** en el **conjunto de prueba**.  
+
+Los datos de **Gradient Boosting** mejoran a los del modelo entrenado con el **conjunto completo**, lo que sugiere que cada grupo tiene **patrones distintos**, es decir, la relación entre las **características** y el **precio** es diferente entre estos subgrupos. Esta teoría se confirma al observar las **gráficas de importancia de características** de cada modelo.  
+
+En conclusión, se consigue en un solo modelo capturar todas las **interacciones posibles**.  
+
+En el caso de la **red neuronal**, los resultados **no mejoran**, seguramente debido al **tamaño limitado** del conjunto de datos original. Al partir de un dataset de **menos de 1500 muestras** y dividirlo en **dos clusters**, el número de muestras disponible para cada **submodelo de red neuronal** no fue suficiente para un entrenamiento efectivo.  
+
+Las **redes neuronales** requieren un **mayor volumen de datos** para aprender **patrones complejos** de manera generalizable, mientras que los modelos como el **GBT** suelen ser más robustos en situaciones de **datos pequeños o medianos**.  
+
+La menor tendencia a **sobreactuarse** de la red frente a **GBT** y la mayor capacidad de **generalización** de las redes neuronales en general podrían hacer que, con un **número mayor de muestras de entrenamiento**, funcionen mejor en un **caso real**.  
 
   
 
