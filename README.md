@@ -286,6 +286,18 @@ Por ejemplo, una **buena chimenea** (**FirePlaceQual**) puede ser determinante e
   
 </div>
 
+Las viviendas más caras, por su parte, presentan una serie de **variables exclusivas asociadas con el lujo**: *PoolArea*, terraza de madera (*WoodDeckSF*) o darle importancia a la calidad de los materiales exteriores (*ExterQual*).  
+
+Un caso curioso es **GarageArea**, que es la tercera más importante en el *cluster* 1. Una posible explicación sería que las personas que pueden permitirse esas casas tienen varios vehículos y necesitan garajes más amplios.
+
+br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/22.png">
+  
+</div>
+
 Al observar la posición de **OverallQual** (Calidad general de la construcción) y **OverallCond** (Condición-estado general de la construcción) en cada **clúster**, se observa que sus posiciones están **invertidas**. Y no sólo eso, este patrón también se repite en los otros dos pares de **Calidad-Condición** (**ExterQual**, **ExterCond**, **BsmtQual** y **BsmtCond**).  
 
 La explicación podría ser que en **viviendas de alto valor**, la **calidad de los materiales** es más importante que el **estado de conservación** de los mismos. Por ejemplo, unas **escaleras de mármol de Carrara** incrementarán el valor de la propiedad aunque estén algo gastadas. Mientras que en las **casas más baratas**, hechas con materiales más modestos, lo que prima es el **buen estado de los mismos**, ya que esto garantiza su **funcionalidad**.  
@@ -296,7 +308,7 @@ La **funcionalidad**, por cierto, también es una variable (**Functional**) que 
 
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/22.png">
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/23.png">
   
 </div>
 
