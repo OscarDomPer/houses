@@ -249,6 +249,22 @@ Las **redes neuronales** requieren un **mayor volumen de datos** para aprender *
 
 La menor tendencia a **sobreactuarse** de la red frente a **GBT** y la mayor capacidad de **generalización** de las redes neuronales en general podrían hacer que, con un **número mayor de muestras de entrenamiento**, funcionen mejor en un **caso real**.  
 
+  <br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/18.png">
   
+</div>
 
+Para cada **cluster** varía el **orden de las importancias**, indicando **patrones distintos** a la hora de predecir los **precios**.  
 
+Las diferencias en el **orden de las importancias** se explican en gran parte en relación con el **valor de la vivienda**, estando el **cluster 0** compuesto por **viviendas de valor medio-bajo** y el **cluster 1** por **viviendas de alto valor**.  
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/18.png">
+  
+</div>
