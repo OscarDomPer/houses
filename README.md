@@ -191,17 +191,20 @@ De esto se puede concluir que los **datos del conjunto de prueba** son **muy sim
 
 ## Aprendizaje no supervisado.
 
-La idea aquí es, usando **aprendizaje no supervisado**, dividir el **conjunto de entrenamiento** en **clusters** para **reentrenar** en cada uno de ellos los modelos que dieron mejores resultados.  
-
-Posteriormente, utilizando **labeling**, se divide el **conjunto de prueba** en los mismos **clusters** y se realizan las predicciones con su correspondiente modelo.  
-
-El objetivo es doble: por un lado, **mejorar las predicciones** encontrando patrones específicos en cada cluster y, por otro, **extraer insights clave** sobre los factores que influyen en el **precio de las viviendas** en diferentes segmentos del mercado.  
 
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/13.png">
   
 </div>
+
+<br>
+
+La idea aquí es, usando **aprendizaje no supervisado**, dividir el **conjunto de entrenamiento** en **clusters** para **reentrenar** en cada uno de ellos los modelos que dieron mejores resultados.  
+
+Posteriormente, utilizando **labeling**, se divide el **conjunto de prueba** en los mismos **clusters** y se realizan las predicciones con su correspondiente modelo.  
+
+El objetivo es doble: por un lado, **mejorar las predicciones** encontrando patrones específicos en cada cluster y, por otro, **extraer insights clave** sobre los factores que influyen en el **precio de las viviendas** en diferentes segmentos del mercado.  
 
 <br>
 
@@ -268,6 +271,9 @@ De manera general, factores como una **mayor superficie habitable** o un **buen 
 
 <br>
 
+---
+
+
 <div align="center">
 
   <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/20.png">
@@ -290,7 +296,7 @@ Las viviendas más caras, por su parte, presentan una serie de **variables exclu
 
 Un caso curioso es **GarageArea**, que es la tercera más importante en el *cluster* 1. Una posible explicación sería que las personas que pueden permitirse esas casas tienen varios vehículos y necesitan garajes más amplios.
 
-br>
+<br>
 
 <div align="center">
 
