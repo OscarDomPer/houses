@@ -215,8 +215,6 @@ De esto se puede concluir que los **datos del conjunto de prueba** son **muy sim
   
 </div>
 
----
-
 <br>
 
 La idea aquí es, usando **aprendizaje no supervisado**, dividir el **conjunto de entrenamiento** en **clusters** para **reentrenar** en cada uno de ellos los modelos que dieron mejores resultados.  
@@ -278,7 +276,6 @@ Las **redes neuronales** requieren un **mayor volumen de datos** para aprender *
 La menor tendencia a **sobreactuarse** de la red frente a **GBT** y la mayor capacidad de **generalización** de las redes neuronales en general podrían hacer que, con un **número mayor de muestras de entrenamiento**, funcionen mejor en un **caso real**.  
 
 ---
-
   <br>
 
 <div align="center">
