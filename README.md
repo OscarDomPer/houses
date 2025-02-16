@@ -253,7 +253,7 @@ La menor tendencia a **sobreactuarse** de la red frente a **GBT** y la mayor cap
 
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/18.png">
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/19.png">
   
 </div>
 
@@ -261,10 +261,46 @@ Para cada **cluster** varía el **orden de las importancias**, indicando **patro
 
 Las diferencias en el **orden de las importancias** se explican en gran parte en relación con el **valor de la vivienda**, estando el **cluster 0** compuesto por **viviendas de valor medio-bajo** y el **cluster 1** por **viviendas de alto valor**.  
 
+Ciertas características, como **GrLivArea** (área total habitable a nivel del suelo), **BsmtQualityScore** (una medida que combina la superficie y la calidad de los acabados del sótano) y **1stFlrSF** (superficie del primer piso), tienen gran **importancia** en ambos **clústeres**.  
+
+De manera general, factores como una **mayor superficie habitable** o un **buen sótano** incrementan el **valor de la propiedad**.  
+
+
 <br>
 
 <div align="center">
 
-  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/18.png">
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/20.png">
   
 </div>
+
+Características que en **viviendas de gran valor** se dan por sentadas, pueden representar un **factor diferencial** en **viviendas más modestas**.  
+
+Por ejemplo, una **buena chimenea** (**FirePlaceQual**) puede ser determinante en una **vivienda media**. Otro buen ejemplo es el **aire acondicionado** (**CentralAir**) o una **buena calefacción** (**HeatingQC**).  
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/21.png">
+  
+</div>
+
+Al observar la posición de **OverallQual** (Calidad general de la construcción) y **OverallCond** (Condición-estado general de la construcción) en cada **clúster**, se observa que sus posiciones están **invertidas**. Y no sólo eso, este patrón también se repite en los otros dos pares de **Calidad-Condición** (**ExterQual**, **ExterCond**, **BsmtQual** y **BsmtCond**).  
+
+La explicación podría ser que en **viviendas de alto valor**, la **calidad de los materiales** es más importante que el **estado de conservación** de los mismos. Por ejemplo, unas **escaleras de mármol de Carrara** incrementarán el valor de la propiedad aunque estén algo gastadas. Mientras que en las **casas más baratas**, hechas con materiales más modestos, lo que prima es el **buen estado de los mismos**, ya que esto garantiza su **funcionalidad**.  
+
+La **funcionalidad**, por cierto, también es una variable (**Functional**) que solo aparece en el **top 30** en **Low Price Houses**.  
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/22.png">
+  
+</div>
+
+La variable **Neighborhood**, que se refiere al barrio en el que están ubicadas las propiedades, presenta gran **importancia** en ambos **clústeres**. Saber en qué **barrios** ha ido incrementando el **precio de las viviendas** y en cuáles está bajando podría ser una valiosa información para predecir no solo el **valor actual** de una propiedad, sino también su **evolución en el futuro próximo**.  
+
+De acuerdo con los datos, barrios como **Crawford**, **Mitchell** o **Briardale** serían excelentes opciones para **invertir**, mientras que sería recomendable mantenerse alejado de **Meadow Village** o **Bloomington Heights**.  
+
