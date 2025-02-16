@@ -187,7 +187,21 @@ Los resultados son en general **razonables**. Parece que los dos modelos que **s
 
 De esto se puede concluir que los **datos del conjunto de prueba** son **muy similares** a los del de entrenamiento. Seguramente, la **Red Neuronal** mejoraría con **datos menos homogéneos**.
 
+<br>
 
+## Aprendizaje no supervisado.
+
+La idea aquí es, usando **aprendizaje no supervisado**, dividir el **conjunto de entrenamiento** en **clusters** para **reentrenar** en cada uno de ellos los modelos que dieron mejores resultados.  
+
+Posteriormente, utilizando **labeling**, se divide el **conjunto de prueba** en los mismos **clusters** y se realizan las predicciones con su correspondiente modelo.  
+
+El objetivo es doble: por un lado, **mejorar las predicciones** encontrando patrones específicos en cada cluster y, por otro, **extraer insights clave** sobre los factores que influyen en el **precio de las viviendas** en diferentes segmentos del mercado.  
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/13.png">
+  
+</div>
 
 
 
