@@ -38,7 +38,9 @@ Este proyecto utiliza el dataset **"House Prices: Advanced Regression Techniques
 - **Aprendizaje no supervisado** para agrupar las casas en distintos clusters según sus características.  
 - **Reentrenamiento supervisado** dentro de cada cluster, mejorando el rendimiento del modelo y obteniendo información valiosa sobre la importancia de las características en cada grupo.  
 
-Este **enfoque híbrido** permite no solo **mejorar la precisión** de las predicciones, sino también **extraer insights clave** sobre los factores que influyen en el precio de las viviendas en diferentes segmentos del mercado.  
+Este **enfoque híbrido** permite no solo **mejorar la precisión** de las predicciones, sino también **extraer insights clave** sobre los factores que influyen en el precio de las viviendas en diferentes segmentos del mercado.
+
+---
 
 <br>
 
@@ -58,6 +60,8 @@ Se observa un alto porcentaje de datos faltantes en algunas columnas. Dado que e
 
 Sin embargo, no se descartarán estas variables de inmediato, ya que aún podrían ofrecer información útil. Por ejemplo, los valores nulos en la columna **`Fence`** podrían interpretarse como la **ausencia de cercas** y ser sustituidos por un **0**.  
 
+---
+
 <br>
 
 <div align="center">
@@ -72,7 +76,9 @@ Algunas variables categóricas tienen una **única categoría**, lo que las hace
 
 Parece que muchas variables tienen **valores atípicos**. Sin embargo, dada la naturaleza del dataset, no se puede saber a priori si son valores **legítimamente altos** o si se deben a **errores en la recolección de datos**.  
 
-Este hecho, junto con el uso de **modelos robustos** que manejan bien los outliers para la predicción, descarta cualquier tipo de **eliminación generalizada** de estos valores. En su lugar, se tratará **cada caso de forma individual**.  
+Este hecho, junto con el uso de **modelos robustos** que manejan bien los outliers para la predicción, descarta cualquier tipo de **eliminación generalizada** de estos valores. En su lugar, se tratará **cada caso de forma individual**. 
+
+---
 
 <br>
 
@@ -86,6 +92,8 @@ Parece que muchas variables tienen **valores atípicos**. Sin embargo, dada la n
 
 Este hecho, junto con el uso de **modelos robustos** que manejan bien los outliers para la predicción, descarta cualquier tipo de **eliminación generalizada** de estos valores. En su lugar, se tratará **cada caso de forma individual**.  
 
+---
+
 <br>
 
 <div align="center">
@@ -96,8 +104,9 @@ Este hecho, junto con el uso de **modelos robustos** que manejan bien los outlie
 
 Se observan **correlaciones** tanto con **SalePrice** como entre otras variables. Por ejemplo, las correlaciones de **YearBuilt** con otras variables sugieren distintas preferencias en el diseño de las casas a lo largo de los años.  
 
-Analizando concretamente las **correlaciones de las variables numéricas** con la variable objetivo, vuelven a aparecer **fuertes correlaciones**, mientras que en otras variables no tanto. Sin embargo, estas últimas pueden ser **importantes para el modelo** al establecer **relaciones no lineales**.  
+Analizando concretamente las **correlaciones de las variables numéricas** con la variable objetivo, vuelven a aparecer **fuertes correlaciones**, mientras que en otras variables no tanto. Sin embargo, estas últimas pueden ser **importantes para el modelo** al establecer **relaciones no lineales**.
 
+---
 <br>
 
 ## Tratamiento de los datos
@@ -121,6 +130,7 @@ El máximo de **LotFrontage** son dos propiedades de **313 pies** (aproximadamen
 ### Valores Nulos:  
 Hay **259 valores nulos**. Teniendo en cuenta que en el dataset no hay valores menores de **20 pies**, no sería descabellado pensar que los **NaN** se correspondan en realidad a valores de **0** o cercanos a 0. Apoya esta teoría la mayor proporción de terrenos de forma irregular entre las filas que tienen valores de **LotFrontage NaN**. Por lo tanto, se sustituyen los **NaN** por **0**. En la práctica, se le ha aplicado este tratamiento a los valores nulos del dataset, porque su presencia parecía responder a la ausencia de la variable más que a la ausencia de su registro.
 
+---
 <br>
 
 ### Neighborhood: 
@@ -135,6 +145,7 @@ Es una variable a priori muy interesante, sin embargo, tiene demasiadas **catego
 
 Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo que contribuye al objetivo de **reducir la dimensionalidad**.
 
+---
 <br>
 
 ### BsmtFinType1 y BsmtFinSF1:
@@ -154,6 +165,8 @@ Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo 
 4. **TotalBsmtSF**: Esta variable representa el área total del sótano, y es la suma de todas las áreas, tanto las acabadas (**BsmtFinSF1 + BsmtFinSF2**) como las no acabadas (**BsmtUnfSF**).
 
 **Estas seis variables deberían poder resumirse en una sola**; en primer lugar, como hasta ahora le daremos un valor de 0 a los NA, luego le asignaremos valores ordinales a BsmtFintype 1 y 2, luego se pondera el valor de las áreas correspondientes, con una fórmula que será el valor normalizado de la correspondiente área con el valor de BsmtFintype para luego sumar todas las áreas.
+
+---
 
 <br>
 
@@ -175,6 +188,8 @@ El **Stacking** no ofrece mejores resultados.
 
 La **Red Neuronal** muestra resultados interesantes, ya que el **sobreajuste** es muy bajo, insinuando que es capaz de **generalizar**.
 
+---
+
 <br>
 
 <div align="center">
@@ -187,6 +202,8 @@ Los resultados son en general **razonables**. Parece que los dos modelos que **s
 
 De esto se puede concluir que los **datos del conjunto de prueba** son **muy similares** a los del de entrenamiento. Seguramente, la **Red Neuronal** mejoraría con **datos menos homogéneos**.
 
+---
+
 <br>
 
 ## Aprendizaje no supervisado.
@@ -198,6 +215,8 @@ De esto se puede concluir que los **datos del conjunto de prueba** son **muy sim
   
 </div>
 
+---
+
 <br>
 
 La idea aquí es, usando **aprendizaje no supervisado**, dividir el **conjunto de entrenamiento** en **clusters** para **reentrenar** en cada uno de ellos los modelos que dieron mejores resultados.  
@@ -205,6 +224,8 @@ La idea aquí es, usando **aprendizaje no supervisado**, dividir el **conjunto d
 Posteriormente, utilizando **labeling**, se divide el **conjunto de prueba** en los mismos **clusters** y se realizan las predicciones con su correspondiente modelo.  
 
 El objetivo es doble: por un lado, **mejorar las predicciones** encontrando patrones específicos en cada cluster y, por otro, **extraer insights clave** sobre los factores que influyen en el **precio de las viviendas** en diferentes segmentos del mercado.  
+
+---
 
 <br>
 
@@ -217,6 +238,8 @@ El objetivo es doble: por un lado, **mejorar las predicciones** encontrando patr
 Dada la **gran dimensionalidad** del modelo, se valora la **inercia** de cada número de **clusters** en el **conjunto completo** de los datos y luego en **subconjuntos** con las **50, 30 y 10 variables más importantes** para el modelo **XGBoost**. En todos los casos, el número de **K** parece ser **2**, aunque no es una decisión clara.  
 
 Se vuelven a usar los **4 conjuntos** para obtener los **clusters** usando **KMeans=2**. Como era de esperar, al usar **todas las variables**, la **clusterización** no es clara, pero con las **50 mejores** ya se observan **dos clusters diferenciados**.  
+
+---
 
 <br>
 
@@ -231,6 +254,8 @@ Se selecciona **K=2** en las **50 mejores características**, pues con esta comb
 Como se observa en estas gráficas, los **clusters** se agrupan claramente en función del **valor de las viviendas**. Esto se refleja tanto en la variable **SalePrice** (que no fue utilizada para la agrupación) como en otras variables relacionadas con **calidad y superficie**, que presentan valores más altos en el **clúster 1**.  
 
 Por otro lado, la variable **Age**, que indica la **antigüedad de la vivienda**, es, como era de esperar, mayor en el **clúster 0**.  
+
+---
 
 <br>
 
@@ -252,6 +277,8 @@ Las **redes neuronales** requieren un **mayor volumen de datos** para aprender *
 
 La menor tendencia a **sobreactuarse** de la red frente a **GBT** y la mayor capacidad de **generalización** de las redes neuronales en general podrían hacer que, con un **número mayor de muestras de entrenamiento**, funcionen mejor en un **caso real**.  
 
+---
+
   <br>
 
 <div align="center">
@@ -268,11 +295,9 @@ Ciertas características, como **GrLivArea** (área total habitable a nivel del 
 
 De manera general, factores como una **mayor superficie habitable** o un **buen sótano** incrementan el **valor de la propiedad**.  
 
-
-<br>
-
 ---
 
+<br>
 
 <div align="center">
 
@@ -283,6 +308,8 @@ De manera general, factores como una **mayor superficie habitable** o un **buen 
 Características que en **viviendas de gran valor** se dan por sentadas, pueden representar un **factor diferencial** en **viviendas más modestas**.  
 
 Por ejemplo, una **buena chimenea** (**FirePlaceQual**) puede ser determinante en una **vivienda media**. Otro buen ejemplo es el **aire acondicionado** (**CentralAir**) o una **buena calefacción** (**HeatingQC**).  
+
+---
 
 <br>
 
@@ -295,6 +322,8 @@ Por ejemplo, una **buena chimenea** (**FirePlaceQual**) puede ser determinante e
 Las viviendas más caras, por su parte, presentan una serie de **variables exclusivas asociadas con el lujo**: *PoolArea*, terraza de madera (*WoodDeckSF*) o darle importancia a la calidad de los materiales exteriores (*ExterQual*).  
 
 Un caso curioso es **GarageArea**, que es la tercera más importante en el *cluster* 1. Una posible explicación sería que las personas que pueden permitirse esas casas tienen varios vehículos y necesitan garajes más amplios.
+
+---
 
 <br>
 
@@ -309,6 +338,8 @@ Al observar la posición de **OverallQual** (Calidad general de la construcción
 La explicación podría ser que en **viviendas de alto valor**, la **calidad de los materiales** es más importante que el **estado de conservación** de los mismos. Por ejemplo, unas **escaleras de mármol de Carrara** incrementarán el valor de la propiedad aunque estén algo gastadas. Mientras que en las **casas más baratas**, hechas con materiales más modestos, lo que prima es el **buen estado de los mismos**, ya que esto garantiza su **funcionalidad**.  
 
 La **funcionalidad**, por cierto, también es una variable (**Functional**) que solo aparece en el **top 30** en **Low Price Houses**.  
+
+---
 
 <br>
 
