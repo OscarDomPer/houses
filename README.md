@@ -155,6 +155,38 @@ Las nuevas categorías son susceptibles de **codificarse de forma ordinal**, lo 
 
 **Estas seis variables deberían poder resumirse en una sola**; en primer lugar, como hasta ahora le daremos un valor de 0 a los NA, luego le asignaremos valores ordinales a BsmtFintype 1 y 2, luego se pondera el valor de las áreas correspondientes, con una fórmula que será el valor normalizado de la correspondiente área con el valor de BsmtFintype para luego sumar todas las áreas.
 
+<br>
+
+## Selección del modelo
+
+En primera instancia se prueban los **modelos más comunes**, y también un **Stacking** y una **Red Neuronal**. Se usan dos métricas: **RMSLE**, que es la que se usará como referencia en el reto, y **𝑅²**, que se medirán tanto en **train** como en **test**, con el objetivo de valorar el **sobreajuste**.  
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/10.png">
+  
+</div>
+
+En los **modelos más comunes** se observan métricas prometedoras en los modelos más **robustos** (**Gradient Boosting** y **Random Forest**). Los modelos que no funcionan bien con relaciones **no lineales** tienen un desempeño muy pobre. Todo ello sugiere que las variables se relacionan entre sí de **forma compleja**.
+
+En la familia de los **ensambladores**, solo **CatBoost** mejora a **Gradient**, pero dado que el **sobreajuste** es mayor y que el dataset es distinto a los demás, se descarta. A pesar de que las métricas de **XGBoost** son peores, se mantendrá este modelo, debido a que suele funcionar bien en este tipo de pruebas.
+
+El **Stacking** no ofrece mejores resultados.
+
+La **Red Neuronal** muestra resultados interesantes, ya que el **sobreajuste** es muy bajo, insinuando que es capaz de **generalizar**.
+
+<br>
+
+<div align="center">
+
+  <img src="https://github.com/OscarDomPer/houses/blob/main/imaxes/12.png">
+  
+</div>
+
+Los resultados son en general **razonables**. Parece que los dos modelos que **sobreajustaban en exceso** (**GBT** y **XGB**) tienen un rendimiento algo superior a los que **generalizaron mejor** (**Stacking** y **Red Neuronal**).  
+
+De esto se puede concluir que los **datos del conjunto de prueba** son **muy similares** a los del de entrenamiento. Seguramente, la **Red Neuronal** mejoraría con **datos menos homogéneos**.
+
 
 
 
